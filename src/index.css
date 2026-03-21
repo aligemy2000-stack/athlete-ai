@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#1a1a2e] text-white;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-hover text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg shadow-primary/20 hover:shadow-primary/40 active:scale-95;
+  }
+  
+  .btn-outline {
+    @apply border border-accent text-accent hover:bg-accent hover:text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 active:scale-95;
+  }
+  
+  .card {
+    @apply bg-dark-card border border-white/5 rounded-2xl p-6 shadow-xl relative overflow-hidden;
+  }
+
+  .input-field {
+    @apply bg-dark-bg border border-white/10 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all;
+  }
+
+  .select-field {
+    @apply bg-dark-bg border border-white/10 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all rtl:bg-left cursor-pointer appearance-none;
+  }
+
+  /* Custom Select Arrow for RTL */
+  select.select-field {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: left 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-left: 2.5rem;
+  }
+}
+
+/* Glassmorphism effects */
+.glass {
+  @apply bg-white/5 backdrop-blur-md border border-white/10;
+}
+
+/* Print styles for PDF download */
+@media print {
+  @page {
+    margin: 1.5cm; /* Smaller page margins to fit more content */
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 11px !important; /* Smaller baseline font */
+    line-height: 1.3 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  nav, footer, .btn-primary {
+    display: none !important;
+  }
+
+  /* ── CSS Magic for Mixed Languages ── */
+  /* If text contains Arabic letters, align Right. Otherwise align Left. */
+  /* We use unicode-bidi and direction rules that browser print engines respect */
+  p, h1, h2, h3, h4, span, div, li {
+    unicode-bidi: plaintext !important;
+    text-align: start !important;
+  }
+
+  .container {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .card {
+    background: white !important;
+    border: 1px solid #e5e7eb !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+    padding: 0.75rem !important; /* Tighter padding */
+    margin-bottom: 0.5rem !important; /* Tighter margin */
+    border-radius: 4px !important;
+  }
+
+  /* Compact the exercise list significantly */
+  .p-5 { padding: 0.5rem !important; }
+  .p-4 { padding: 0.25rem 0.5rem !important; }
+  .gap-3 { gap: 0.25rem !important; }
+  .space-y-3 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.25rem !important; }
+  
+  h1 { font-size: 16pt !important; margin-bottom: 4px !important; }
+  h2 { font-size: 14pt !important; margin-bottom: 4px !important; }
+  h3 { font-size: 12pt !important; margin-bottom: 2px !important; }
+  h4 { font-size: 10pt !important; margin-bottom: 2px !important; }
+
+  p, li, span {
+    color: #111827 !important; /* Darker for better print contrast */
+  }
+
+  .text-sm { font-size: 9pt !important; }
+  .text-xs { font-size: 8pt !important; }
+
+  .text-primary { color: #2563eb !important; }
+  .text-accent { color: #0891b2 !important; }
+
+  .bg-dark-bg,
+  .bg-dark-card,
+  .bg-white\/5,
+  .bg-primary\/20 {
+    background: transparent !important;
+  }
+
+  /* Exercise sets/reps pills compacting */
+  .px-2\.5 { padding-left: 0.25rem !important; padding-right: 0.25rem !important; }
+  .py-1 { padding-top: 0 !important; padding-bottom: 0 !important; }
+  .rounded-lg { border-radius: 2px !important; }
+  .border { border: none !important; } /* Removing borders on pills saves vertical space */
+
+  /* Hide excessive icons in print to save space if needed, or keep them small */
+  svg { width: 12px !important; height: 12px !important; }
+}
+
