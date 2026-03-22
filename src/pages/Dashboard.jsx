@@ -112,7 +112,7 @@ export default function Dashboard() {
           </div>
           <h2 className="text-2xl font-bold mb-3">No programs found</h2>
           <p className="text-white/50 mb-8 max-w-md mx-auto">
-            You haven't generated any training programs yet. Start now and let our AI coach build a plan for you.
+            You haven&apos;t generated any training programs yet. Start now and let our AI coach build a plan for you.
           </p>
           <Link to="/create" className="btn-primary inline-flex items-center gap-2">
             Get Started <ArrowRight className="w-4 h-4" />

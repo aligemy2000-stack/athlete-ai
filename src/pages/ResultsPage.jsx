@@ -6,7 +6,7 @@ import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { useAuth } from '../context/AuthContext';
 import {
   Activity, Apple, BatteryCharging, Calendar, ChevronDown,
-  ListRestart, Timer, Info, Download, Target, CheckCircle2, Plus
+  ListRestart, Timer, Download, Target, CheckCircle2, Plus
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -22,7 +22,7 @@ export default function ResultsPage() {
   const [program, setProgram]       = useState(null);
   const [loading, setLoading]       = useState(true);
   const [error, setError]           = useState(null);
-  const [saving, setSaving]         = useState(false);
+  const [, setSaving]         = useState(false);
   const [saved, setSaved]           = useState(false);
   const [expandedDay, setExpandedDay] = useState(null);
 

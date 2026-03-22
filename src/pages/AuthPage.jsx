@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useAuth } from '../context/AuthContext';
-import { Activity, Mail, Lock, User, LogIn, Github, Chrome, AlertCircle, Loader2 } from 'lucide-react';
+import { Activity, Mail, Lock, User, LogIn, Chrome, AlertCircle, Loader2 } from 'lucide-react';
 import { db } from '../firebase';
 import { collection, query, where, getDocs, limit } from 'firebase/firestore';
 
@@ -55,6 +55,7 @@ export default function AuthPage() {
 
       checkProgramsAndRedirect();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, navigate, location]);
 
   const handleEmailAuth = async (e) => {

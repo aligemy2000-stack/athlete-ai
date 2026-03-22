@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import { Activity, LogIn, LogOut, User } from 'lucide-react';
+import { Activity, LogOut, User } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
 export default function Navbar() {
-  const { user, loginWithGoogle, logout } = useAuth();
+  const { user, logout } = useAuth();
 
   return (
     <nav className="fixed top-0 w-full z-50 glass border-b border-white/5">
