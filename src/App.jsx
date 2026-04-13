@@ -17,11 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/auth" element={<AuthPage />} />
-            <Route path="/create" element={
-              <ProtectedRoute>
-                <CreateProgram />
-              </ProtectedRoute>
-            } />
+            <Route path="/create" element={<CreateProgram />} />
             <Route path="/results" element={
               <ProtectedRoute>
                 <ResultsPage />
